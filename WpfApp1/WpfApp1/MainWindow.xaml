@@ -1,0 +1,42 @@
+﻿<Window x:Class="ShapeAreaCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Калькулятор площади фигур" Height="350" Width="400">
+    <Grid>
+        <StackPanel Margin="20">
+            <ComboBox x:Name="ShapeComboBox" Width="200" SelectionChanged="ShapeComboBox_SelectionChanged">
+                <ComboBoxItem Content="Круг" />
+                <ComboBoxItem Content="Прямоугольник" />
+                <ComboBoxItem Content="Треугольник" />
+            </ComboBox>
+
+            <!-- Параметры для круга -->
+            <StackPanel x:Name="CirclePanel" Visibility="Collapsed">
+                <TextBlock Text="Радиус:" />
+                <TextBox x:Name="CircleRadiusTextBox" Width="200" />
+            </StackPanel>
+
+            <!-- Параметры для прямоугольника -->
+            <StackPanel x:Name="RectanglePanel" Visibility="Collapsed">
+                <TextBlock Text="Ширина:" />
+                <TextBox x:Name="RectangleWidthTextBox" Width="200" />
+                <TextBlock Text="Высота:" />
+                <TextBox x:Name="RectangleHeightTextBox" Width="200" />
+            </StackPanel>
+
+            <!-- Параметры для треугольника -->
+            <StackPanel x:Name="TrianglePanel" Visibility="Collapsed">
+                <TextBlock Text="Длина основания:" />
+                <TextBox x:Name="TriangleBaseTextBox" Width="200" />
+                <TextBlock Text="Высота:" />
+                <TextBox x:Name="TriangleHeightTextBox" Width="200" />
+            </StackPanel>
+
+            <!-- Кнопка для вычисления площади -->
+            <Button Content="Вычислить площадь" Width="200" Click="CalculateAreaButton_Click" Margin="0,20,0,0" />
+
+            <!-- Результат вычисления площади -->
+            <TextBlock x:Name="ResultTextBlock" FontSize="16" Margin="0,20,0,0" />
+        </StackPanel>
+    </Grid>
+</Window>
